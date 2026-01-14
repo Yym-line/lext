@@ -1,6 +1,6 @@
 # LExt
 
-Official PyTorch implementation of the paper "[Listen to Extract:Onset-Prompted Target Speaker Extraction]([https://arxiv.org/pdf/2505.05114])" in TASLP.
+This repository provides a PyTorch reproduction of the method proposed in "[Listen to Extract:Onset-Prompted Target Speaker Extraction]([https://arxiv.org/pdf/2505.05114])"(TASLP).
 
 ## Dataset
 [Libri2Mix](https://github.com/JorisCos/LibriMix) min wav16k dataset. The `Data` folder contains three subfolders: `train`, `dev`, and `test`. Each subfolder includes three files:
