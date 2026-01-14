@@ -1,3 +1,8 @@
+"""
+Created on Fri Dec 19 2025
+@author: Yiming Yang
+"""
+
 import torch
 import torch as th
 import torch.nn as nn
