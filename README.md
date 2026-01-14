@@ -42,7 +42,7 @@ Condition-wise results on three Libri2Mix PSE tasks:
 <table>
   <thead>
     <tr>
-      <th rowspan="2">Condition</th>
+      <th rowspan="3">Condition</th>
       <th rowspan="3">Method</th>
       <th colspan="3">Metrics</th>
     </tr>
