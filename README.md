@@ -42,9 +42,9 @@ Condition-wise results on three Libri2Mix PSE tasks:
 <table>
   <thead>
     <tr>
-      <th rowspan="3">Condition</th>
-      <th rowspan="3">Method</th>
-      <th colspan="3">Metrics</th>
+      <th rowspan="4">Condition</th>
+      <th rowspan="4">Method</th>
+      <th colspan="4">Metrics</th>
     </tr>
     <tr>
       <th>SI-SDR</th>
@@ -54,7 +54,7 @@ Condition-wise results on three Libri2Mix PSE tasks:
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3" align="center"><strong>2-speaker+noise</strong></td>
+      <td rowspan="4" align="center"><strong>2-speaker+noise</strong></td>
       <td>Mixture</td>
       <td>-2.03</td>
       <td>1.43</td>
