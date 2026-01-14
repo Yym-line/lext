@@ -1,14 +1,14 @@
-# SEF-PNet
+# LExt
 
-Official PyTorch implementation of the paper "[SEF-PNet: Speaker Encoder-Free Personalized Speech Enhancement with Local and Global Contexts Aggregation](https://arxiv.org/abs/2501.11274)" in ICASSP 2025.
+Official PyTorch implementation of the paper "[Listen to Extract:Onset-Prompted Target Speaker Extraction]([https://arxiv.org/pdf/2505.05114])" in TASLP.
 
 ## Dataset
-[Libri2Mix](https://github.com/JorisCos/LibriMix) min wav8k dataset. The `Data` folder contains three subfolders: `train`, `dev`, and `test`. Each subfolder includes three files:
-- `mix_clean.scp`: Clean mixtures of 2 speakers.
+[Libri2Mix](https://github.com/JorisCos/LibriMix) min wav16k dataset. The `Data` folder contains three subfolders: `train`, `dev`, and `test`. Each subfolder includes three files:
+- `mix_both.scp`: Clean mixtures of 2 speakers+noise.
 - `ref.scp`: Target speaker’s speech.
 - `auxs1.scp`: Enrollment speech from the target speaker, which is different from the target speaker’s speech in the mixture.
 
-The `mix_clean.scp` corresponds to the **2-speaker** scenario in the results section.
+The `mix_both.scp` corresponds to the **2-speaker+noise** scenario in the results section.
 Note that in this dataset, only the first speaker in the mixed speech is considered the target speaker.
 Make sure to update the file paths in the `scp` files to match your local data locations. Also, remember to update the data paths in `conf_unet_tse_32ms.py` accordingly.
 
@@ -21,7 +21,7 @@ Make sure to update the file paths in the `scp` files to match your local data l
    
 - **`conf_unet_tse_32ms.py`**: Configuration file containing model architecture, data paths, and training hyperparameters.
 
-- **`SEF_PNet_pse.py`**: Defines the `SEF_PNet` model, which is used in the training script.
+- **`lext_tfgridnet.py`**: Defines the `LExt` model, which is used in the training script.
 
 ## Evaluation
 
@@ -54,44 +54,6 @@ Condition-wise results on three Libri2Mix PSE tasks:
   </thead>
   <tbody>
     <tr>
-      <td rowspan="3" align="center"><strong>1-speaker+noise</strong></td>
-      <td>Mixture</td>
-      <td>3.27</td>
-      <td>1.75</td>
-      <td>79.51</td>
-    </tr>
-    <tr>
-      <td>sDPCCN</td>
-      <td>14.49</td>
-      <td>3.04</td>
-      <td>92.47</td>
-    </tr>
-    <tr>
-      <td>SEF-PNet</td>
-      <td>14.50</td>
-      <td>3.05</td>
-      <td>92.47</td>
-    </tr>
-    <tr>
-      <td rowspan="3" align="center"><strong>2-speaker</strong></td>
-      <td>Mixture</td>
-      <td>-0.03</td>
-      <td>1.60</td>
-      <td>71.38</td>
-    </tr>
-    <tr>
-      <td>sDPCCN</td>
-      <td>11.62</td>
-      <td>2.76</td>
-      <td>87.19</td>
-    </tr>
-    <tr>
-      <td>SEF-PNet</td>
-      <td>13.00</td>
-      <td>3.05</td>
-      <td>89.71</td>
-    </tr>
-    <tr>
       <td rowspan="3" align="center"><strong>2-speaker+noise</strong></td>
       <td>Mixture</td>
       <td>-2.03</td>
@@ -99,16 +61,22 @@ Condition-wise results on three Libri2Mix PSE tasks:
       <td>64.65</td>
     </tr>
     <tr>
-      <td>sDPCCN</td>
-      <td>6.93</td>
-      <td>2.12</td>
-      <td>79.32</td>
+      <td>SEF-PNet</td>
+      <td>8.18</td>
+      <td>2.44</td>
+      <td>82.67</td>
     </tr>
     <tr>
-      <td>SEF-PNet</td>
-      <td>7.54</td>
-      <td>2.14</td>
-      <td>80.58</td>
+      <td>CIE-mDPTNet</td>
+      <td>9.47</td>
+      <td>2.67</td>
+      <td>85.35</td>
+    </tr>
+    <tr>
+      <td>LExt</td>
+      <td>10.47</td>
+      <td>2.74</td>
+      <td>87.26</td>
     </tr>
   </tbody>
 </table>
