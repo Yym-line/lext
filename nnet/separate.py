@@ -120,7 +120,7 @@ if __name__ == "__main__":
                         help='aux scp')
     parser.add_argument('--fs', type=int, default=16000, 
                         help="Sample rate for mixture input")
-    parser.add_argument('--dump-dir', type=str, default="/node/hzl/expriment/SEF_PNet_icassp2025_github/results",
+    parser.add_argument('--dump-dir', type=str, default="/node/yym/expriment/LExt/result",
                         help="Directory to dump separated results out")
     args = parser.parse_args()
     run(args)
