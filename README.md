@@ -1,6 +1,6 @@
 # LExt
 
-This repository provides a PyTorch reproduction of the method proposed in "[Listen to Extract:Onset-Prompted Target Speaker Extraction]([https://arxiv.org/pdf/2505.05114])"(TASLP).
+This repository provides a PyTorch reproduction of the method proposed in "[Listen to Extract:Onset-Prompted Target Speaker Extraction]([https://arxiv.org/pdf/2505.05114])" (TASLP).
 
 ## Dataset
 [Libri2Mix](https://github.com/JorisCos/LibriMix) min wav16k dataset. The `Data` folder contains three subfolders: `train`, `dev`, and `test`. Each subfolder includes three files:
@@ -16,9 +16,10 @@ Make sure to update the file paths in the `scp` files to match your local data l
 - **`train.sh`**: Shell script that initiates training by setting parameters (e.g., epochs, batch size, GPU settings) and calling the Python script (`train_unet_tse_steplr_clip.py`). To train the model, run:
   ```bash
   ./train.sh
-
+```
+  
 - **`train_unet_tse_steplr_clip.py`**: Main Python script for training. It initializes the model, sets up data loaders, and manages the training loop.
-   
+  
 - **`conf_unet_tse_32ms.py`**: Configuration file containing model architecture, data paths, and training hyperparameters.
 
 - **`lext_tfgridnet.py`**: Defines the `LExt` model, which is used in the training script.
@@ -37,7 +38,7 @@ To evaluate the model, use the provided `eval.sh` script. It sets the necessary 
 
 ## Results
 
-Condition-wise results on three Libri2Mix PSE tasks:
+Results on Libri2Mix TSE tasks:
 
 <table>
   <thead>
@@ -93,6 +94,6 @@ from memonger import SublinearSequential
 and replace SublinearSequential with nn.Sequential in lext_tfgridnet.py to avoid memory issues.
 
 ### Create SCP
-The SCP file I provided is from [DPCCN](https://github.com/jyhan03/icassp22-dataset/tree/main/lst/libri2mix). It only uses the first speaker as the target. To match MC-Spex results for the 2-speaker condition in Libri2Mix, you'll need to use double the data, with two speakers taking turns as the target. This means you’ll need to recreate the SCP files for training, validation, and testing. You can use the script in the link for reference.
+The SCP file I provided is from [DPCCN](https://github.com/jyhan03/icassp22-dataset/tree/main/lst/libri2mix). It only uses the first speaker as the target. 
 
 Any problems, contact me at y2379286479@outlook.com, and a reply will be given promptly.
